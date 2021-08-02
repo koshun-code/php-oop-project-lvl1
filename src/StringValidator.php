@@ -13,12 +13,18 @@ class StringValidator extends Scema
         return $this;
     }
 
-    public function minLength()
+    public function minLength($length)
     {
+        $this->validators['minLength'] = function ($data) use ($length) {
+            return strlen($data) >= $length;
+        };
         return $this;
     }
     public function contains(string $string)
     {
+        $this->validators['contains'] = function ($data) use ($string) {
+            return strpos($data, $string) !== false;
+        };
         return $this;
     }
 
