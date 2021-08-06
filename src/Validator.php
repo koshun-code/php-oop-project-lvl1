@@ -10,4 +10,12 @@ class Validator
     {
         return new StringValidator();
     }
+    public function numeric()
+    {
+        return new NumberValidator();
+    }
+    public function array()
+    {
+        return new ArrayValidator();
+    }
 }

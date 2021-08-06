@@ -27,12 +27,15 @@ class StringValidatorTest extends TestCase
         $this->assertTrue($this->schema->isValid('la la la'));
 
         $this->assertFalse($this->schema->isValid(''));
-
+    }
+    public function testMinLength()
+    {
         $this->schema->minLength(3);
-
         $this->assertTrue($this->schema->isValid('Mounting Elbruss'));
         $this->assertFalse($this->schema->isValid('we'));
-
+    }
+    public function testContains()
+    {
         $expected = $this->schema->contains('what')->isValid('what does the fox say'); // true
         $this->assertTrue($expected);
         $expected2 = $this->schema->contains('whatthe')->isValid('what does the fox say');
