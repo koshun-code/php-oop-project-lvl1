@@ -4,6 +4,7 @@ namespace Hexlet\Validator\Tests;
 
 use PHPUnit\Framework\TestCase;
 use Hexlet\Validator\Validator;
+
 use function my_str_starts_with;
 
 class ValidatorTest extends TestCase
@@ -38,12 +39,10 @@ class ValidatorTest extends TestCase
         $this->assertTrue($schema->isValid(12));
         $this->assertTrue($schema->isValid(-10));
         $this->assertFalse($schema->isValid(null));
-
         $schema->positive();
         $this->assertTrue($schema->isValid(10)); 
         $this->assertFalse($schema->isValid(-10));
         $this->assertFalse($schema->isValid(-5));
-
         $schema->range(-5, 5);
         $this->assertEquals(false, $schema->isValid(-3));
         $this->assertEquals(true, $schema->isValid(5));
@@ -52,13 +51,11 @@ class ValidatorTest extends TestCase
     public function testArray()
     {
         $schema = $this->v->array();
-
         $this->assertTrue($schema->isValid(null));
         $schema->require();
         $this->assertTrue($schema->isValid([]));
         $this->assertTrue($schema->isValid(['la-la-la', 'hexlet is cool']));
         $this->assertFalse($schema->isValid(null));
-
         $schema->sizeof(2);
         $this->assertEquals(true, $schema->isValid(['hexlet', 'code-basics']));
         $schema->sizeof(3);
@@ -67,7 +64,6 @@ class ValidatorTest extends TestCase
     public function testShape()
     {
         $schema = $this->v->array();
-
         $schema->shape([
             'name' => $this->v->string()->required(),
             'age' => $this->v->number()->positive(),
