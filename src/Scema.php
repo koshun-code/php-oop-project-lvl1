@@ -1,6 +1,6 @@
 <?php
 
-namespace Validator;
+namespace Hexlet\Validator;
 
 /**
  * This interface contain methods that belong all classses

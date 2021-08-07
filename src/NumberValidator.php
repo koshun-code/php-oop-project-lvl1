@@ -1,6 +1,6 @@
 <?php
 
-namespace Validator;
+namespace Hexlet\Validator;
 
 class NumberValidator extends Scema
 {

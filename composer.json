@@ -8,8 +8,8 @@
       },
       "autoload": {
         "psr-4": {
-          "Validator\\": "src",
-          "Validator\\Tests\\": "tests"
+          "Hexlet\\Validator\\": "src",
+          "Hexlet\\Validator\\Tests\\": "tests"
         }, 
         "files": [
           "tests/functions.php"

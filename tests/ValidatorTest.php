@@ -1,10 +1,10 @@
 <?php 
 
-namespace Validator\Tests;
+namespace Hexlet\Validator\Tests;
 
 
 use PHPUnit\Framework\TestCase;
-use Validator\Validator;
+use Hexlet\Validator\Validator;
 use function my_str_starts_with;
 
 class ValidatorTest extends TestCase
