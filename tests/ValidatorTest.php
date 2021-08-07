@@ -5,7 +5,7 @@ namespace Validator\Tests;
 
 use PHPUnit\Framework\TestCase;
 use Validator\Validator;
-use function str_starts_with;
+use function my_str_starts_with;
 
 class ValidatorTest extends TestCase
 {
@@ -86,7 +86,7 @@ class ValidatorTest extends TestCase
     }
     public function testAddValidator()
     {
-        $fn = fn($value, $start) => str_starts_with($value, $start);
+        $fn = fn($value, $start) => my_str_starts_with($value, $start);
         // Метод добавления новых валидаторов
         // addValidator($type, $name, $fn)
         $this->v->addValidator('string', 'startWith', $fn);
