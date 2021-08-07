@@ -11,14 +11,14 @@ class ArrayValidator extends Scema
         };
         return $this;
     }
-    public function sizeof($number): self
+    public function sizeof(int $number): self
     {
         $this->validators['sizeof'] = fn($data) => count($data) === $number;
         return $this;
     }
-    public function shape($schemas): self
+    public function shape(array $schemas): self
     {
-        $this->validators['shape'] = function ($data) use ($schemas) {
+        $this->validators['shape'] = function ($data) use ($schemas): bool {
             foreach ($schemas as $key => $schema) {
                 if (!$schema->isValid($data[$key])) {
                     return false;

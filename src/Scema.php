@@ -15,7 +15,7 @@ abstract class Scema
     protected $validators = [];
     protected $customeValidator = [];
 
-    public function __construct($customeValidator)
+    public function __construct(array $customeValidator)
     {
         $this->customeValidator = $customeValidator;
     }

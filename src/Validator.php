@@ -4,7 +4,7 @@ namespace Hexlet\Validator;
 
 class Validator
 {
-    private $customeValidator = [];
+    private array $customeValidator = [];
 
     public function string(): StringValidator
     {
@@ -18,12 +18,12 @@ class Validator
     {
         return new ArrayValidator($this->getCustomeValidator('array'));
     }
-    public function addValidator($type, $name, $fn): self
+    public function addValidator(string $type, string $name, callable $fn): self
     {
         $this->customeValidator[$type][$name] = $fn;
         return $this;
     }
-    public function getCustomeValidator($type): array
+    public function getCustomeValidator(string $type): array
     {
         return $this->customeValidator[$type] ?? [];
     }
