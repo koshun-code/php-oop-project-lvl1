@@ -15,7 +15,7 @@ class NumberValidator extends Scema
     public function positive()
     {
         $this->validators['positive'] = function ($data) {
-            return ($data >= 0);
+            return $data === null || $data > 0;
         };
         return $this;
     }
