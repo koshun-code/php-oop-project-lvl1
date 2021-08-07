@@ -24,7 +24,7 @@ abstract class Scema
      * @data : mixid;
      * Function cheak data use validate function;
      */
-    public function isValid($data)
+    public function isValid($data): bool
     {
         foreach ($this->validators as $validator) {
             if (!$validator($data)) {
@@ -33,7 +33,7 @@ abstract class Scema
         }
         return true;
     }
-    public function test($fnName, $args)
+    public function test($fnName, $args): self
     {
         $this->validators[$fnName] = function ($data) use ($fnName, $args) {
             $validator = $this->customeValidator[$fnName];

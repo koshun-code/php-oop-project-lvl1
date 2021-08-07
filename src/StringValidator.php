@@ -5,7 +5,7 @@ namespace Hexlet\Validator;
 class StringValidator extends Scema
 {
 
-    public function required()
+    public function required(): self
     {
         $this->validators['required'] = function ($data) {
             return (is_string($data) && strlen($data) !== 0);
@@ -13,14 +13,14 @@ class StringValidator extends Scema
         return $this;
     }
 
-    public function minLength($length)
+    public function minLength($length): self
     {
         $this->validators['minLength'] = function ($data) use ($length) {
             return strlen($data) >= $length;
         };
         return $this;
     }
-    public function contains(string $string)
+    public function contains(string $string): self
     {
         $this->validators['contains'] = function ($data) use ($string) {
             return strpos($data, $string) !== false;

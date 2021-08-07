@@ -9,7 +9,7 @@ use function my_str_starts_with;
 
 class ValidatorTest extends TestCase
 {
-    private $v;
+    private Validator $v;
 
     protected function setUp(): void
     {
