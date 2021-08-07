@@ -27,5 +27,4 @@ class StringValidator extends Scema
         };
         return $this;
     }
-
 }

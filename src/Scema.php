@@ -24,7 +24,6 @@ abstract class Scema
      * @data : mixid;
      * Function cheak data use validate function;
      */
-    
     public function isValid($data)
     {
         foreach ($this->validators as $validator) {
