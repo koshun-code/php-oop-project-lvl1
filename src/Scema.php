@@ -12,8 +12,8 @@ abstract class Scema
      * Contains all validotors
      * It'll fill in implement in validators
      */
-    protected $validators = [];
-    protected $customeValidator = [];
+    protected array $validators = [];
+    protected array $customeValidator = [];
 
     public function __construct(array $customeValidator)
     {
